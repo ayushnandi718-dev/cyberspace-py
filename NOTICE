@@ -1,0 +1,27 @@
+cyberspace-py
+=============
+
+This repository contains an independent implementation of the Cyberspace v2
+protocol.  It was written from the specification text and contains no code
+copied from any other implementation.
+
+The specification, `CYBERSPACE_V2.md`, and the accompanying reference
+material are the work of arkin0x and are published under the Creative Commons
+Attribution-ShareAlike 4.0 International licence:
+
+    https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+The source code in this repository is under the MIT licence; see LICENSE.
+
+The following data files are taken from the specification repository and
+remain under the Creative Commons Attribution-ShareAlike 4.0 International
+licence mentioned above:
+
+    src/cyberspace/data/grandfathered-v1-hyperjumps.txt
+    src/cyberspace/data/grandfathered-v2-sidesteps.txt
+    tests/fixtures/chain-rules-2026-09-28-virtual-brackets.json
+    tests/fixtures/visualization_vectors.json
+
+The chain-rules and visualization vector files are the specification's own
+conformance vectors.  They are reproduced here unchanged so that the test
+suite runs without a checkout of the specification repository.

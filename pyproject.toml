@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cyberspace-py"
+version = "0.1.0"
+description = "A from-scratch implementation of the Cyberspace v2 protocol, with a security audit toolkit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ayush Nandi" }]
+keywords = ["cyberspace", "nostr", "bip340", "cantor", "security", "audit"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = []
+
+[project.optional-dependencies]
+tls = ["cryptography>=41"]
+hashing = ["bcrypt>=4", "passlib>=1.7"]
+dev = ["pytest>=8", "cryptography>=41", "bcrypt>=4", "passlib>=1.7"]
+
+[project.scripts]
+cs = "cyberspace.cli:main"
+secsuite = "secsuite.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ayushnandi718-dev/cyberspace-py"
+Repository = "https://github.com/ayushnandi718-dev/cyberspace-py"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cyberspace = ["data/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
